@@ -67,23 +67,22 @@ def comment_on_posts():
 
         for post in posts:
             if post.num_comments == 0: 
-                prompt = f"Write a thoughtful comment for this Reddit post: {post.title}"
+                prompt = f"Write a comment for this Reddit post: {post.title}"
                 comment = generate_content(prompt)
                 if comment:
                     print(f"Commenting on post: {post.title}")
                     post.reply(comment)
                     print("Comment posted successfully!")
-                    logging.info(f"Successfully commented on post: {post.title}")
+                    logging.info(f"Successfull commented on post: {post.title}")
 
     except Exception as e:
         print(f"Error commenting on posts: {e}")
-
 
 def main():
 
     posting_times = ["22:00", "22:03", "22:06"]
 
-    print("Starting bot...")
+    print("Initializing bot...")
 
     for post_time in posting_times:
 
